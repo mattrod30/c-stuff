@@ -5,26 +5,26 @@ using namespace std;
 
 int maxInteger(int a[], int size);
 int minInteger(int a[], int size);
-
+bool runAgain(void);
 
 int main() {
 	const int size = 20;
 	int randomNumbers[size];
 	srand(time(0));
+	do {
+		for (int i = 0; i < size; i++) {
+			randomNumbers[i] = rand() % 1000 + 1;
+			cout << randomNumbers[i] << endl;
 
-	for (int i = 0; i < size; i++) {
-		randomNumbers[i] = rand() % 1000 + 1;
-		cout << randomNumbers << endl;
-
-	}
-	int maxInt = maxInteger(randomNumbers, size);
-	int minInt = minInteger(randomNumbers, size);
-	cout << "The maximum is: " << maxInt << endl;
-	cout << "The minimum is: " << minInt << endl;
+		}
+		int maxInt = maxInteger(randomNumbers, size);
+		int minInt = minInteger(randomNumbers, size);
+		cout << "The maximum is: " << maxInt << endl;
+		cout << "The minimum is: " << minInt << endl;
+		cout << endl;
 
 
-
-
+	} while (runAgain());
 	return 0;
 }
 int maxInteger(int a[], int size) {
@@ -45,6 +45,16 @@ int minInteger(int a[], int size) {
 		}
 	}
 	return min;
+}
+bool runAgain(void) {
+	char userResponse;
+	cout << "Would you like to run again? (y or n). ";
+	cin >> userResponse;
+
+	if (userResponse == 'y' || userResponse == 'Y') {
+		return true;
+	}
+	return false;
 }
 
 
