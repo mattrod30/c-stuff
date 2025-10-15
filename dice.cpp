@@ -1,43 +1,31 @@
-#include <iostream>
+#include<iostream>
 #include <cstdlib>
 #include <ctime>
-
 using namespace std;
 
-int dieRoll() {
-	return rand() % 6 + 1;  
-}
+int dieRoll(void);
 
-int main() {
-	srand(time(0)); 
-	
-	int userInput;
-	cout << "\nAwesome Dice Rolling App \n" << endl;
+int main(void) {
+	srand(time(0));
 
-	cout << "Enter the number of dice to roll: ";
-	cin >> userInput;
+	int rolls = 50000;
+	const int n = 13;
+	int a[n];
+	int roll; 
 
-	if (userInput == 1) {
-		cout << "Rolling one die: " << dieRoll() << endl;
-	
-	}else if (userInput == 2) {
-		cout << "Rolling two: " << dieRoll() + dieRoll() << endl;
-
-	}else if (userInput == 3) {
-		cout << "Rolling three: " << dieRoll() + dieRoll() + dieRoll() << endl;
-
-	}else if (userInput == 4) {
-		cout << "Rolling four: " << dieRoll() + dieRoll() + dieRoll() + dieRoll() << endl;
-
-	}else if (userInput == 5) {
-		cout << "Rolling five: " << dieRoll() + dieRoll() + dieRoll() + dieRoll() + dieRoll() << endl;
-
-	}else if (userInput == 6) {
-		cout << "Rolling six: " << dieRoll() + dieRoll() + dieRoll() + dieRoll() + dieRoll() + dieRoll() << endl;
-	}else {
-		cout << "\nOnly up to 6 allowed";
+	for (int i = 0; i < n; i++) {
+		a[i] = 0;
 	}
-	
+	for (int j = 0; j < rolls; j++) {
+		roll = dieRoll() + dieRoll();
+		a[roll]++;
+	}
+	for (int i = 0; i < n; i++) {
+		cout << " sum " << i << "\t=\t" << a[i]
+			<< "\tprob. " << 1.0 * a[i] / rolls << endl;
+	}
 	return 0;
-
+}
+int dieRoll(void) {
+	return(1 + rand() % 6);
 }
