@@ -36,7 +36,7 @@ int main() {
         }
         cout << "\nThe number of " << pick << "'s " << "is " << count << endl;
 
-    } while (runAgain());;
+    } while (runAgain());
 
     return 0;
 }
@@ -46,7 +46,7 @@ bool runAgain(void) {
 
     cout << "\nWould you like to run again (y or n): ";
     cin >> userResponse;
-    cin.ignore(); // to clean up the input stream
+    cin.ignore(); 
 
     if (userResponse == 'y' || userResponse == 'Y')
         return(true);
