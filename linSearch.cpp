@@ -46,6 +46,7 @@ void printArray(char a[], const int n) {
         cout << "Index " << i << " has value: " << a[i] << endl;
     }
 }
+
 int searchFor(char arr[], const int n, char target) {
     for (int i = 0; i < n; i++) {
         if (tolower(arr[i]) == tolower(target)) {
@@ -55,6 +56,7 @@ int searchFor(char arr[], const int n, char target) {
     }
     return -1;
 }
+
 bool runAgain(void) {
     char userResponse;
 
