@@ -2,28 +2,29 @@
 using namespace std;
 
 int main() {
-    const int NUM_QUESTIONS = 3;
+    const int numQuestions = 3;
 
-    string questions[NUM_QUESTIONS] = {
-        "1) What is the capital of France?",
-        "2) Which number is even?",
-        "3) What is 2 + 2?"
+    string questions[numQuestions] = {
+        "1) What is the capital of Califronia?",
+        "2) Which number is NOT a prime number?",
+        "3) What is the correct way to spell this word?"
     };
 
-    string options[NUM_QUESTIONS][4] = {
-        {"A) London", "B) Paris", "C) Rome", "D) Berlin"},
-        {"A) 3", "B) 7", "C) 10", "D) 5"},
-        {"A) 3", "B) 4", "C) 5", "D) 6"}
+    string options[numQuestions][4] = {
+        {"A) Sacramento", "B) Los Angeles", "C) Fresno", 
+        "D) San Francisco"},
+        {"A) 2", "B) 1", "C) 6", "D) 7"},
+        {"A) Misissippi", "B) Missisipi", "C) Misisippi", "D) Mississippi"}
     };
 
-    char answers[NUM_QUESTIONS] = {'B', 'C', 'B'};
+    char answers[numQuestions] = {'A', 'C', 'D'};
 
     int score = 0;
     char userAnswer;
 
-    cout << "===== Welcome to the Quiz Game! =====\n\n";
+    cout << "===== Quiz Game =====\n\n";
 
-    for (int i = 0; i < NUM_QUESTIONS; i++) {
+    for (int i = 0; i < numQuestions; i++) {
         cout << questions[i] << endl;
 
         for (int j = 0; j < 4; j++) {
@@ -44,14 +45,13 @@ int main() {
     }
 
     cout << "===== Quiz Finished! =====" << endl;
-    cout << "Your final score: " << score << " out of " << NUM_QUESTIONS << endl;
+    cout << "Your final score: " << score << " out of " << numQuestions << endl;
 
-    if (score == NUM_QUESTIONS)
-        cout << "Perfect score! Great job!" << endl;
+    if (score == numQuestions)
+        cout << "Perfect score! Well done!" << endl;
     else if (score > 0)
-        cout << "Not bad, keep practicing!" << endl;
+        cout << "Almost there!" << endl;
     else
         cout << "Better luck next time!" << endl;
 
     return 0;
-}
