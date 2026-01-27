@@ -1,4 +1,4 @@
-#include<iostream>
+include<iostream>
 #include <string>
 using namespace std;
 
@@ -35,9 +35,9 @@ private:
     int employeeID;
     float salary;
 public:
-    Employee(int arg = 0, string argF = "Jane", string argL = "Doe", int argAge = 0);
+    Employee(int arg = 0, string argF = "Jane", string argL = "Doe", int argAge = 0, int argID = 0, float argSalary = 0);
 
-    void setID(int arg);
+    void setID(int arg);                                                    
     void setSalary(float arg);
 
     int getID(void);
@@ -51,6 +51,9 @@ int main() {
     Person p1("Alice", "Johnson", 28);
     Person p2("Bob", "Smith", 45);
 
+    UScitizen c1(123456789, "Charlie", "Brown", 30);
+    UScitizen c2(987654321, "Diana", "Prince", 33);
+    UScitizen c3(555667777, "Ethan", "Hunt", 40);
     UScitizen c1(123456789, "Charlie", "Brown", 30);
     UScitizen c2(987654321, "Diana", "Prince", 33);
     UScitizen c3(555667777, "Ethan", "Hunt", 40);
@@ -68,6 +71,10 @@ int main() {
     cout << endl;
     c3.display();
     cout << endl;
+
+    cout << "----- Employees -----" << endl;
+
+
 
     return 0;
 }
@@ -128,7 +135,7 @@ void UScitizen::display(void) {
     cout << "SSN: " << getSSN();
 }
 
-Employee::Employee(int arg, string argF, string argL, int argAge) {
+Employee::Employee(int arg, string argF, string argL, int argAge, int argID, float argSalary) {
     setFirstName(argF);
     setLastName(argL);
     setAge(argAge);
