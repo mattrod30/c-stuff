@@ -49,8 +49,8 @@ int main(void) {
     Employee* b;
 
     for (int i = 0; i < 300; i++) {
-        b = new Employee("Bob", i);
-        minions.push_back(b);
+        new Employee("Bob", i);
+        minions.push_back();
     }
 
     printMinions(minions);
