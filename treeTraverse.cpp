@@ -9,7 +9,7 @@ public:
 	Node* left;
 	Node* right;
 
-void report(void);
+	void report(void);
 };
 
 class BinaryTree {
@@ -104,14 +104,14 @@ int main() {
 	temp = myTree.root;
 
 	myTree.root->report();
+	cout << endl;
 
-	cout << myTree.findDepth(13) << endl;
-
-	cout << "List in order recursively: ";
+	cout << "\nList in order recursively: ";
 	treeRecursive(myTree.root);
 	cout << endl;
 	cout << "List in order iteratively: ";
 	treeIterative(myTree.root);
+	cout << endl;
 
 	return 0;
 }
@@ -148,6 +148,6 @@ void treeIterative(Node* root) {
 		cout << cur->data << " ";
 
 		cur = cur->right;
-    
+
 	}
 }
