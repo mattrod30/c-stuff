@@ -20,21 +20,27 @@ public:
 
 class Student :public Person {
 private:
-    int ID;
+    string ID; //changed to string to deal with leading zeros
 public:
-    Student(string argN = "Matt", int argAge = 20, int argID = 1234)
+    Student(string argN = "Matt", int argAge = 20, string argID = "1234")
         : Person(argN, argAge) {
         ID = argID;
     }
 
-    int getID();
+    string getID();
     void display();
 };
 int stringHash(string name, int buckets);
 
 int main() {
     int buckets = 5;
-
+    vector<vector<Student>> hashTable (buckets);
+    
+    Student s1("Matthew", 20, 499049);
+    Student s2("Ethan", 19, 367678);
+    Student
+    int index = stringHash("Matthew", buckets);
+    
 
     return 0;
 }
@@ -60,6 +66,6 @@ int Student::getID() {
 }
 
 void Student::display() {
-    cout << "Name: " << getName() << " | Age: " << getAge() << " | ID: " << getID << endl;
+    cout << "Name: " << getName() << " | Age: " << getAge() << " | COS ID: " << getID() << endl;
 }
 
